@@ -1,17 +1,19 @@
 #include <raylib.h>
+#include <iostream>
+#include "constants.h"
 
+using namespace constants;
 
 int main()
 {
-    InitWindow(screenWidth, screenHeight, "My first RAYLIB program!");
+    InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "tetris");
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
     {
         BeginDrawing();
-        ClearBackground(darkGreen);
-        ball.Update();
-        ball.Draw();
+        ClearBackground(DARKGREEN);
+        
         EndDrawing();
     }
 
