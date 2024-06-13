@@ -1,12 +1,8 @@
 #include <iostream>
 #include "grid.h"
 
-Grid::Grid(int rows, int columns, int cellsize)
+Grid::Grid()
 {
-    this->numberOfRows = rows;
-    this->numberOfColumns = columns;
-    this->cellSize = cellSize;
-
     colours = GetCellColours();
 }
 
@@ -48,7 +44,9 @@ void Grid::Draw()
 {
     for(int row = 0; row < numberOfRows; row++){
         for(int col = 0; col < numberOfColumns; col++){
-            DrawRectangle(x,y,cellSize,cellSize,colours[0]);
+            int cellValue = grid[row][col];
+            DrawRectangle(col*cellSize+1,row*cellSize+1,cellSize-1,cellSize-1,colours[cellValue]);
+            //DrawRectangle(col*cellSize,row*cellSize,cellSize,cellSize,colours[cellValue]); REMOVE GRID LINES
         }
     }
 }

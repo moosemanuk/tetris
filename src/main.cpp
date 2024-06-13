@@ -10,7 +10,7 @@ int main()
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "tetris");
     SetTargetFPS(60);
 
-    Grid grid(10, 20, 25);
+    Grid grid;
 
     grid.Initialise();
     grid.PrintToConsole();
@@ -18,6 +18,7 @@ int main()
     while (!WindowShouldClose())
     {
         BeginDrawing();
+        grid.Draw();
         ClearBackground(DARKBLUE);
         
         EndDrawing();
