@@ -7,8 +7,7 @@ class Grid{
         int numberOfRows = 24;
         int numberOfColumns = 12;
         int cellSize = 25;
-        std::vector<Color> colours;
-        std::vector<Color> GetCellColours(); 
+        std::vector<Color> colours;        
     public:
         Grid();
         int grid[24][12];
