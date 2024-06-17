@@ -13,6 +13,7 @@ class Game
     public:
         Game();
         Block GetRandomBlock();
+        void Draw();
         std::vector<Block> getAllBlocks();
         Grid grid;
 };

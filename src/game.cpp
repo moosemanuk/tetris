@@ -5,6 +5,8 @@ Game::Game()
 {
     grid = Grid();
     blocks = getAllBlocks();
+    currentBlock = GetRandomBlock();
+    nextBlock = GetRandomBlock();
 }
 
 Block Game::GetRandomBlock()
@@ -16,6 +18,12 @@ Block Game::GetRandomBlock()
     Block block = blocks[randomIndex];
     blocks.erase(blocks.begin() + randomIndex);
     return block;
+}
+
+void Game::Draw()
+{
+    grid.Draw();
+    currentBlock.Draw();
 }
 
 std::vector<Block> Game::getAllBlocks()

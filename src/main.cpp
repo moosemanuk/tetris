@@ -1,8 +1,7 @@
 #include <raylib.h>
 #include <iostream>
 #include "constants.h"
-#include "grid.h"
-#include "blocks.cpp"
+#include "game.h"
 
 using namespace constants;
 
@@ -11,27 +10,17 @@ int main()
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "tetris");
     SetTargetFPS(60);
 
-    Grid grid = Grid();
+    Game game = Game();
+    game.grid.Initialise();
+    //Grid grid = Grid();
 
-    grid.Initialise();
-    grid.PrintToConsole();
-
-    IBlock block = IBlock();
+    game.grid.Initialise();    
     
     while (!WindowShouldClose())
     {
         BeginDrawing();        
-        ClearBackground(DARKBLUE);        
-        grid.Draw();
-
-        if(IsKeyPressed(KEY_RIGHT)){
-            block.Move(0,1);
-        }
-        if(IsKeyPressed(KEY_LEFT)){
-            block.Move(0,-1);
-        }       
-
-        block.Draw();       
+        ClearBackground(DARKBLUE);                
+        game.Draw();       
         EndDrawing();
     }
 
