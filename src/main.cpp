@@ -14,12 +14,13 @@ int main()
     game.grid.Initialise();
     //Grid grid = Grid();
 
-    game.grid.Initialise();    
+    game.Initialise(); 
     
     while (!WindowShouldClose())
     {
+        game.HandleInput();               
         BeginDrawing();        
-        ClearBackground(DARKBLUE);                
+        ClearBackground(DARKBLUE);         
         game.Draw();       
         EndDrawing();
     }
