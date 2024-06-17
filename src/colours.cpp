@@ -1,7 +1,6 @@
 #include "colours.h"
 #include <vector>
 
-//const Color darkGrey = {26,31,40,255};
 const Color black = {0,0,0,255};
 const Color green = {47,230,23,255};
 const Color red = {232,18,18,255};
