@@ -16,20 +16,22 @@ int main()
     grid.Initialise();
     grid.PrintToConsole();
 
-    LBlock Lblock = LBlock();
-    ZBlock Zblock = ZBlock();
-    OBlock Oblock = OBlock();
-    JBlock Jblock = JBlock();
-
+    IBlock block = IBlock();
     
-
     while (!WindowShouldClose())
     {
         BeginDrawing();        
-        ClearBackground(DARKBLUE);
+        ClearBackground(DARKBLUE);        
         grid.Draw();
-        Jblock.Draw();
-        
+
+        if(IsKeyPressed(KEY_RIGHT)){
+            block.Move(0,1);
+        }
+        if(IsKeyPressed(KEY_LEFT)){
+            block.Move(0,-1);
+        }       
+
+        block.Draw();       
         EndDrawing();
     }
 
