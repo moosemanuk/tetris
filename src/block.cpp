@@ -1,8 +1,11 @@
 #include "block.h"
+#include "constants.h"
+
+using namespace constants;
 
 Block::Block()
 {
-    cellSize = 25;
+    cellSize = GRID_CELL_SIZE;
     rotationState = 0;
     colours = GetCellColours();
 }
@@ -19,6 +22,16 @@ void Block::Move(int rows, int columns)
 {
     rowOffset += rows;
     columnOffset += columns;
+}
+
+void Block::Rotate()
+{
+    if(rotationState != 3){
+        rotationState++;
+    }
+    else{
+        rotationState = 0;
+    }
 }
 
 std::vector<Position> Block::GetCellPositions()

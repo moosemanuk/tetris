@@ -10,7 +10,9 @@ class Game
         std::vector<Block> blocks;
         Block currentBlock;
         Block nextBlock;
-
+        void RotateBlock();
+        bool IsBlockOutside();
+        
     public:
         Game();
         void Initialise();
@@ -19,7 +21,7 @@ class Game
         void HandleInput();
         void MoveBlockLeft();
         void MoveBlockRight();
-        void MoveBlockDown();
+        void MoveBlockDown();                
         std::vector<Block> getAllBlocks();
         Grid grid;
 };

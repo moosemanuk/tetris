@@ -1,18 +1,22 @@
 #pragma once
 #include <vector>
 #include <raylib.h>
+#include "constants.h"
+
+using namespace constants;
 
 class Grid{
     private:
-        int numberOfRows = 24;
-        int numberOfColumns = 12;
-        int cellSize = 25;
+        int numberOfRows = GRID_ROWS;
+        int numberOfColumns = GRID_COLS;
+        int cellSize = GRID_CELL_SIZE;
         std::vector<Color> colours;        
     public:
         Grid();
-        int grid[24][12];
+        int grid[GRID_ROWS][GRID_COLS];
         void Initialise();
         void PrintToConsole();
-        void Draw();       
+        void Draw();  
+        bool IsCellOutside(int row, int column);     
 
 };
