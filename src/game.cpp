@@ -71,7 +71,7 @@ void Game::MoveBlockDown()
 {
     currentBlock.Move(1, 0);
     if(IsBlockOutside()){
-        currentBlock.Move(-1, 0);
+        currentBlock.Move(-1, 0);        
     }
 }
 
