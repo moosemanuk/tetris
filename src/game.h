@@ -12,6 +12,7 @@ class Game
         Block nextBlock;
         void RotateBlock();
         bool IsBlockOutside();
+        void LockBlock();
         
     public:
         Game();
