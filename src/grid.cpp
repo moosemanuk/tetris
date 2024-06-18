@@ -2,6 +2,31 @@
 #include "grid.h"
 #include "colours.h"
 
+bool Grid::IsRowFull(int row)
+{
+    for(int col = 0; col < GRID_COLS; col++){
+        if(grid[row][col] == 0){
+            return false;
+        }
+    }
+    return true;
+}
+
+void Grid::ClearRow(int row)
+{
+    for(int col = 0; col < GRID_COLS; col++){
+        grid[row][col] = 0;
+    }
+}
+
+void Grid::MoveRowDown(int row, int numRows)
+{
+    for(int col = 0; col < GRID_COLS; col++){
+        grid[row+numRows][col] = grid[row][col];    
+        grid[row][col] = 0;    
+    }
+}
+
 Grid::Grid()
 {
     colours = GetCellColours();
@@ -58,14 +83,17 @@ bool Grid::IsCellEmpty(int row, int column)
     return false;
 }
 
-bool Grid::CompletedRows()
+int Grid::ClearFullRows()
 {
-    for(int row = 0; row < GRID_ROWS; row++){
-        for(int col = 0; col < GRID_COLS; col++){
-            if(grid[row][col] == 0){
-                return false;
-            }
+    int completed = 0;
+    for(int row = GRID_ROWS-1; row >= 0; row--){
+        if(IsRowFull(row)){
+            ClearRow(row);
+            completed++;
+        }
+        else if(completed > 0){
+            MoveRowDown(row, completed);
         }
     }
-    return true;
+    return completed;
 }

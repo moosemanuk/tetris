@@ -7,6 +7,9 @@ using namespace constants;
 
 class Grid{
     private:
+        bool IsRowFull(int row);
+        void ClearRow(int row);
+        void MoveRowDown(int row, int numRows);
         int numberOfRows = GRID_ROWS;
         int numberOfColumns = GRID_COLS;
         int cellSize = GRID_CELL_SIZE;
@@ -19,6 +22,6 @@ class Grid{
         void Draw();  
         bool IsCellOutside(int row, int column);  
         bool IsCellEmpty(int row, int column);  
-        bool CompletedRows(); 
+        int ClearFullRows(); 
 
 };
