@@ -40,6 +40,16 @@ void Block::Rotate()
     }
 }
 
+void Block::UndoRotation()
+{
+    if(rotationState !=0){
+        rotationState--;
+    }
+    else{
+        rotationState = 3;
+    }
+}
+
 std::vector<Position> Block::GetCellPositions()
 {
     std::vector<Position> tiles = cells[rotationState];

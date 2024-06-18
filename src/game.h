@@ -13,6 +13,7 @@ class Game
         void RotateBlock();
         bool IsBlockOutside();
         void LockBlock();
+        bool BlockFits();
         
     public:
         Game();

@@ -17,6 +17,8 @@ class Grid{
         void Initialise();
         void PrintToConsole();
         void Draw();  
-        bool IsCellOutside(int row, int column);     
+        bool IsCellOutside(int row, int column);  
+        bool IsCellEmpty(int row, int column);  
+        bool CompletedRows(); 
 
 };
