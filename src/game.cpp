@@ -9,6 +9,7 @@ Game::Game()
     currentBlock = GetRandomBlock();
     nextBlock = GetRandomBlock();
     GameOver = false;
+    score = 0;
 }
 
 void Game::Initialise()
@@ -31,6 +32,16 @@ void Game::Draw()
 {
     grid.Draw();
     currentBlock.Draw();
+    Rectangle scoreRec;
+    scoreRec.x = 330;
+    scoreRec.y = 70;
+    scoreRec.width = 150;
+    scoreRec.height = 40;
+    DrawRectangleRounded(scoreRec, 0.1, 2, BLUE);
+    DrawText(TextFormat("Score: %03i", score), 350, 80, 20, WHITE);
+    if(GameOver){
+        DrawText("GAME OVER", 330, 500, 25, WHITE);
+    }
 }
 
 void Game::HandleInput()
@@ -119,7 +130,7 @@ void Game::LockBlock()
         GameOver = true;
     }
     nextBlock = GetRandomBlock();
-    grid.ClearFullRows();
+    score += grid.ClearFullRows();
 }
 
 bool Game::BlockFits()
