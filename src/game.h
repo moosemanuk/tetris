@@ -7,7 +7,8 @@
 class Game
 {
     private:
-        std::vector<Block> blocks;        
+        std::vector<Block> blocks;  
+        int score;      
         Block currentBlock;
         Block nextBlock;
         void RotateBlock();
