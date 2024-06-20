@@ -136,7 +136,11 @@ bool Game::BlockFits()
 
 void Game::Reset()
 {
-    Initialise();
+    grid.Initialise();
+    blocks = getAllBlocks();
+    currentBlock = GetRandomBlock();
+    nextBlock = GetRandomBlock();
+
 }
 
 std::vector<Block> Game::getAllBlocks()
