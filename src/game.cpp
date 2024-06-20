@@ -36,6 +36,10 @@ void Game::Draw()
 void Game::HandleInput()
 {
     int keyPressed = GetKeyPressed();
+    if(GameOver && keyPressed != 0){
+        GameOver = false;
+        Reset();
+    }
     switch(keyPressed){
         case KEY_LEFT: 
             MoveBlockLeft();
@@ -128,6 +132,11 @@ bool Game::BlockFits()
     }
     return true;
 
+}
+
+void Game::Reset()
+{
+    Initialise();
 }
 
 std::vector<Block> Game::getAllBlocks()

@@ -14,6 +14,7 @@ class Game
         bool IsBlockOutside();
         void LockBlock();
         bool BlockFits();
+        void Reset();
         
     public:
         Game();
