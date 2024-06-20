@@ -36,7 +36,7 @@ int main()
         }
         
         BeginDrawing();        
-        ClearBackground(BLACK);
+        ClearBackground(midnightBlue);
         game.Draw();       
         EndDrawing();
     }

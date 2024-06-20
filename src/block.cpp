@@ -14,13 +14,7 @@ void Block::Draw()
 {
     std::vector<Position> tiles = GetCellPositions();
     for(Position item: tiles){
-        Rectangle rec;
-        rec.x = item.column*cellSize + 1;
-        rec.y = item.row*cellSize + 1;
-        rec.width = cellSize - 1;
-        rec.height = cellSize - 1;
-        DrawRectangleRounded(rec, 0.3f, 5, colours[id]);
-        //DrawRectangle(item.column*cellSize + 1, item.row*cellSize + 1, cellSize - 1, cellSize - 1, colours[id]);
+        DrawRectangle(item.column*cellSize + 1, item.row*cellSize + 1, cellSize - 1, cellSize - 1, colours[id]);
     }
 }
 

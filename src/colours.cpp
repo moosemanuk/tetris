@@ -9,8 +9,9 @@ const Color yellow = {237,234,4,255};
 const Color purple = {166,0,247,255};
 const Color cyan = {21,204,209,255};
 const Color blue = {13,64,216,255};
+const Color midnightBlue = {25,25,112,255};
 
 std::vector<Color> GetCellColours()
 {
-    return {black, green, red, orange, yellow, purple, cyan, blue};
+    return {black, green, red, orange, yellow, purple, cyan, blue, midnightBlue};
 }

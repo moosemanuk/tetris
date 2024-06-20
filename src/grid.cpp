@@ -56,13 +56,7 @@ void Grid::Draw()
     for(int row = 0; row < numberOfRows; row++){
         for(int col = 0; col < numberOfColumns; col++){
             int cellValue = grid[row][col];
-            Rectangle rec;
-            rec.x = col*cellSize + 1;
-            rec.y = row*cellSize + 1;
-            rec.width = cellSize - 1;
-            rec.height = cellSize - 1;
-            DrawRectangleRounded(rec, 0.3f, 5, colours[cellValue]);
-            //DrawRectangle(col*cellSize+1,row*cellSize+1,cellSize-1,cellSize-1,colours[cellValue]);            
+            DrawRectangle(col*cellSize+1,row*cellSize+1,cellSize-1,cellSize-1,colours[cellValue]);            
         }
     }
 }
