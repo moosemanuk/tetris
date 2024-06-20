@@ -31,7 +31,7 @@ int main()
     {
         game.HandleInput();
                  
-        if(EventTriggered(0.03)){
+        if(EventTriggered(0.3)){
             game.MoveBlockDown();
         }
         
