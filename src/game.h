@@ -7,7 +7,7 @@
 class Game
 {
     private:
-        std::vector<Block> blocks;
+        std::vector<Block> blocks;        
         Block currentBlock;
         Block nextBlock;
         void RotateBlock();
@@ -25,5 +25,6 @@ class Game
         void MoveBlockRight();
         void MoveBlockDown();                
         std::vector<Block> getAllBlocks();
+        bool GameOver;
         Grid grid;
 };
