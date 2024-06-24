@@ -33,12 +33,25 @@ void Game::Draw()
     grid.Draw();
     currentBlock.Draw();
     Rectangle scoreRec;
+    Rectangle nextblockRec;
+
     scoreRec.x = 330;
     scoreRec.y = 70;
     scoreRec.width = 150;
     scoreRec.height = 40;
+
+    nextblockRec.x = 330;
+    nextblockRec.y = 140;
+    nextblockRec.width = 150;
+    nextblockRec.height = 75;
+
     DrawRectangleRounded(scoreRec, 0.1, 2, BLUE);
+    DrawRectangleRounded(nextblockRec, 0.1, 2, BLUE);
+
+    nextBlock.DrawNext(225,135);
+
     DrawText(TextFormat("Score: %03i", score), 350, 80, 20, WHITE);
+    
     if(GameOver){
         DrawText("GAME OVER", 330, 500, 25, WHITE);
     }

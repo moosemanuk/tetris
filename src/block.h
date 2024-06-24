@@ -13,8 +13,9 @@ class Block{
         int columnOffset = 0;
         std::vector<Color> colours;
     public:
-        Block();
+        Block();        
         void Draw();
+        void DrawNext(int xoffset, int yoffset);
         void Move(int rows, int columns);
         void Rotate();
         void UndoRotation();
