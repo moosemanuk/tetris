@@ -3,9 +3,11 @@
 
 // tetrominoes are classified as I, J, L, O, S, T, Z
 
-class IBlock :public Block{
+class IBlock :public Block
+{
     public:
-        IBlock(){
+        IBlock()
+        {
             id = 1;
             cells[0] = {Position(1,0), Position(1,1), Position(1,2), Position(1,3)};
             cells[1] = {Position(0,2), Position(1,2), Position(2,2), Position(3,2)};
@@ -15,9 +17,11 @@ class IBlock :public Block{
         }
 };
 
-class JBlock :public Block{
+class JBlock :public Block
+{
     public:
-        JBlock(){
+        JBlock()
+        {
             id = 2;
             cells[0] = {Position(0,0), Position(1,0), Position(1,1), Position(1,2)};
             cells[1] = {Position(0,1), Position(0,2), Position(1,1), Position(2,1)};
@@ -29,9 +33,11 @@ class JBlock :public Block{
 
 };
 
-class LBlock :public Block{
+class LBlock :public Block
+{
     public:
-        LBlock(){
+        LBlock()
+        {
             id = 3;
             cells[0] = {Position(0,2), Position(1,0), Position(1,1), Position(1,2)};
             cells[1] = {Position(0,1), Position(1,1), Position(2,1), Position(2,2)};
@@ -41,9 +47,11 @@ class LBlock :public Block{
         }
 };
 
-class OBlock :public Block{
+class OBlock :public Block
+{
     public:
-        OBlock(){
+        OBlock()
+        {
             id = 4;
             cells[0] = {Position(0,0), Position(0,1), Position(1,0), Position(1,1)};
             cells[1] = {Position(0,0), Position(0,1), Position(1,0), Position(1,1)};
@@ -53,9 +61,11 @@ class OBlock :public Block{
         }
 };
 
-class SBlock :public Block{
+class SBlock :public Block
+{
     public:
-        SBlock(){
+        SBlock()
+        {
             id = 5;
             cells[0] = {Position(0,1), Position(0,2), Position(1,0), Position(1,1)};
             cells[1] = {Position(0,1), Position(1,1), Position(1,2), Position(2,2)};
@@ -65,9 +75,11 @@ class SBlock :public Block{
         }
 };
 
-class TBlock :public Block{
+class TBlock :public Block
+{
     public:
-        TBlock(){
+        TBlock()
+        {
             id = 6;
             cells[0] = {Position(0,1), Position(1,0), Position(1,1), Position(1,2)};
             cells[1] = {Position(0,1), Position(1,1), Position(1,2), Position(2,1)};
@@ -78,9 +90,11 @@ class TBlock :public Block{
 
 };
 
-class ZBlock :public Block{
+class ZBlock :public Block
+{
     public:
-        ZBlock(){
+        ZBlock()
+        {
             id = 7;
             cells[0] = {Position(0,0), Position(0,1), Position(1,1), Position(1,2)};
             cells[1] = {Position(0,2), Position(1,1), Position(1,2), Position(2,1)};

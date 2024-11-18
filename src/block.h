@@ -5,7 +5,8 @@
 #include "position.h"
 #include "colours.h"
 
-class Block{
+class Block
+{
     private:
         int cellSize;
         int rotationState;

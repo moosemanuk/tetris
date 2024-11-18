@@ -4,8 +4,10 @@
 
 bool Grid::IsRowFull(int row)
 {
-    for(int col = 0; col < GRID_COLS; col++){
-        if(grid[row][col] == 0){
+    for(int col = 0; col < GRID_COLS; col++)
+    {
+        if(grid[row][col] == 0)
+        {
             return false;
         }
     }
@@ -14,14 +16,16 @@ bool Grid::IsRowFull(int row)
 
 void Grid::ClearRow(int row)
 {
-    for(int col = 0; col < GRID_COLS; col++){
+    for(int col = 0; col < GRID_COLS; col++)
+    {
         grid[row][col] = 0;
     }
 }
 
 void Grid::MoveRowDown(int row, int numRows)
 {
-    for(int col = 0; col < GRID_COLS; col++){
+    for(int col = 0; col < GRID_COLS; col++)
+    {
         grid[row+numRows][col] = grid[row][col];    
         grid[row][col] = 0;    
     }
@@ -34,8 +38,10 @@ Grid::Grid()
 
 void Grid::Initialise()
 {
-    for(int row = 0; row < numberOfRows; row++){
-        for(int col = 0; col < numberOfColumns; col++){
+    for(int row = 0; row < numberOfRows; row++)
+    {
+        for(int col = 0; col < numberOfColumns; col++)
+        {
             grid[row][col] = 0; 
         }
     }
@@ -43,8 +49,10 @@ void Grid::Initialise()
 
 void Grid::PrintToConsole()
 {
-    for(int row = 0; row < numberOfRows; row++){
-        for(int col = 0; col < numberOfColumns; col++){
+    for(int row = 0; row < numberOfRows; row++)
+    {
+        for(int col = 0; col < numberOfColumns; col++)
+        {
             std::cout << grid[row][col] << " ";
         }
         std::cout << std::endl;
@@ -53,8 +61,10 @@ void Grid::PrintToConsole()
 
 void Grid::Draw()
 {
-    for(int row = 0; row < numberOfRows; row++){
-        for(int col = 0; col < numberOfColumns; col++){
+    for(int row = 0; row < numberOfRows; row++)
+    {
+        for(int col = 0; col < numberOfColumns; col++)
+        {
             int cellValue = grid[row][col];
             DrawRectangle(col*cellSize+11,row*cellSize+11,cellSize-1,cellSize-1,colours[cellValue]);            
         }
@@ -63,7 +73,8 @@ void Grid::Draw()
 
 bool Grid::IsCellOutside(int row, int column)
 {
-    if(row >= 0 && row < numberOfRows && column >= 0 && column < numberOfColumns){
+    if(row >= 0 && row < numberOfRows && column >= 0 && column < numberOfColumns)
+    {
         return false;
     }
     return true;
@@ -71,7 +82,8 @@ bool Grid::IsCellOutside(int row, int column)
 
 bool Grid::IsCellEmpty(int row, int column)
 {
-    if(grid[row][column] == 0){
+    if(grid[row][column] == 0)
+    {
         return true;
     }
     return false;
@@ -80,12 +92,15 @@ bool Grid::IsCellEmpty(int row, int column)
 int Grid::ClearFullRows()
 {
     int completed = 0;
-    for(int row = GRID_ROWS-1; row >= 0; row--){
-        if(IsRowFull(row)){
+    for(int row = GRID_ROWS-1; row >= 0; row--)
+    {
+        if(IsRowFull(row))
+        {
             ClearRow(row);
             completed++;
         }
-        else if(completed > 0){
+        else if(completed > 0)
+        {
             MoveRowDown(row, completed);
         }
     }

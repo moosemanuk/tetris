@@ -5,7 +5,8 @@
 
 using namespace constants;
 
-class Grid{
+class Grid
+{
     private:
         bool IsRowFull(int row);
         void ClearRow(int row);

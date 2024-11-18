@@ -1,7 +1,9 @@
 #pragma once
 
-class Position{
+class Position
+{
     private:
+
     public:
         Position(int row, int column);
         int row;
