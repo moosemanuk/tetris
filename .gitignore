@@ -1,3 +1,8 @@
 *.exe
 *.dsym
 main
+/.vs/tetris/v17
+/.vs/tetris/FileContentIndex
+/tetris/.vs/tetris
+/tetris/x64/Debug
+/x64/Debug
